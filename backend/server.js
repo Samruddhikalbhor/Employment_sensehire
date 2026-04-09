@@ -7,9 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Dummy compatibility API (F08 needs this)
+// ✅ Updated API (dynamic score)
 app.get("/api/compatibility/:candidateId/:jobId", (req, res) => {
-  res.json({ score: 84 }); // you can change value
+  const score = Math.floor(Math.random() * 40) + 60; // 60–100 range
+  res.json({ score });
 });
 
 // Start server
