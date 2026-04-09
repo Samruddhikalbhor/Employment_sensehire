@@ -55,90 +55,6 @@ Traditional hiring discriminates at every stage — from inaccessible applicatio
 
 ---
 
-## Project Structure
-
-```
-sensehire/
-│
-├── frontend/                        # React + Tailwind frontend
-│   ├── index.html                   # Vite entry point — lives here, NOT in src/
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── tailwind.config.js
-│   └── src/
-│       ├── App.jsx                  # Router — Day 2 routes gated by features.config.js
-│       ├── main.jsx
-│       ├── index.css
-│       ├── data/
-│       │   └── features.js          # All feature card data for the landing page
-│       ├── components/
-│       │   ├── FeatureCard.jsx      # Reusable feature card component
-│       │   ├── Navbar.jsx
-│       │   └── Footer.jsx
-│       ├── context/
-│       │   └── AppContext.jsx       # Global state (logged-in candidate, etc.)
-│       ├── pages/
-│       │   ├── Home.jsx             # Landing page with feature cards
-│       │   ├── Day1Features.jsx
-│       │   └── Day2Features.jsx     # Hidden until features.config.js is flipped
-│       └── features/
-│           ├── f01/                 # Each feature has its own folder
-│           │   ├── f01.jsx          # ← participants write their code here
-│           │   ├── f01.css          # ← feature-specific styles here
-│           │   └── FEATURE.md       # Full spec for participants
-│           ├── f02/ … f15/          # Day 1 features
-│           └── day2/                # Day 2 features (hidden until enabled)
-│               ├── F16-stories/
-│               ├── F17-font-sizer/
-│               ├── F18-resume-upload/
-│               ├── F19-resume-optimizer/
-│               ├── F20-interview-prep/
-│               └── F21-chatbot/
-│
-├── backend/                         # Node.js + Express backend
-│   ├── server.js                    # Express entry point — mounts all routes
-│   ├── package.json
-│   ├── .env                         # API keys go HERE — never commit this file
-│   ├── routes/
-│   │   ├── f01-routes.js            # One route file per feature
-│   │   ├── f02-routes.js
-│   │   └── … f15-routes.js
-│   ├── controllers/
-│   │   ├── f01.js                   # Business logic — participants write here
-│   │   ├── f02.js
-│   │   └── … f15.js
-│   ├── data/                        # All JSON data files (pre-filled dummy data)
-│   │   ├── candidates.json          # 8 candidate profiles
-│   │   ├── users.json               # 9 login accounts
-│   │   ├── jobs.json                # 6 job postings
-│   │   ├── disability-types.json    # 4 categories, 19 sub-types
-│   │   ├── ability-vectors.json     # Pre-computed vectors for all candidates
-│   │   ├── job-vectors.json         # Pre-computed vectors for all jobs
-│   │   ├── stories.json             # 5 community stories
-│   │   └── schemas/
-│   │       └── README.md            # JSON shape documentation
-│   └── middleware/
-│       ├── errorHandler.js
-│       └── validateRequest.js
-│
-├── contest-platform/
-│   └── index.html                   # Standalone feature showcase page (no build needed)
-│
-├── .github/
-│   ├── ISSUE_TEMPLATE/              # One GitHub Issue template per feature
-│   │   ├── f01-onboarding.yml
-│   │   └── … f15-speech-to-text.yml
-│   ├── workflows/
-│   │   └── pr-checks.yml            # CI: lint + build on every PR
-│   └── PULL_REQUEST_TEMPLATE.md
-│
-├── features.config.js               # ← Flip day2Enabled: true on Day 2
-├── CONTRIBUTING.md
-├── .gitignore
-└── README.md
-```
-
----
 
 ## Getting Started
 
@@ -151,7 +67,7 @@ sensehire/
 ### 1. Fork and clone
 
 ```bash
-git clone https://github.com/YOUR_ORG/sensehire.git
+git clone https://github.com/commitverse2026/Employment_sensehire
 cd sensehire
 ```
 
@@ -168,16 +84,6 @@ npm install
 cd ../backend
 npm install
 ```
-
-### 4. Create your environment file
-
-```bash
-# Inside backend/
-cp .env.example .env
-# Add your API key if working on F10:
-# AI_API_KEY=your_key_here
-```
-
 > ⚠️ Never commit `.env`. It is already in `.gitignore`.
 
 ### 5. Start the development servers
@@ -193,11 +99,6 @@ node server.js
 cd frontend
 npm run dev
 ```
-
-### 6. View the contest platform
-
-Open `contest-platform/index.html` directly in your browser — no build step needed. This shows all feature cards with full specs and modal details.
-
 ---
 
 ## Feature Overview
@@ -222,16 +123,7 @@ Open `contest-platform/index.html` directly in your browser — no build step ne
 | F14 | Text-to-Speech Reader | Accessibility | Beginner |
 | F15 | Speech-to-Text Profile Builder | Accessibility | Intermediate |
 
-### Day 2 Features (F16–F21) — locked until Day 2
 
-| ID | Feature |
-|----|---------|
-| F16 | Community Stories |
-| F17 | Dynamic Font Sizer |
-| F18 | Resume Upload & Parse |
-| F19 | Resume Rule-Based Optimizer |
-| F20 | Interview Style Preferences |
-| F21 | SenseHire Assistant Chatbot |
 
 Read the full spec for any feature by opening `contest-platform/index.html` or reading the `FEATURE.md` inside each feature folder.
 

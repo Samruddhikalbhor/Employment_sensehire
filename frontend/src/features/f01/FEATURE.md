@@ -34,17 +34,9 @@ The entry point for every new candidate. A clean, multi-step form collecting ful
 
 ## Expected output
 - Multi-step form rendered at `/onboarding`
-- Smooth CSS transition between steps (no page reload)
 - Real-time validation — errors appear as you type
 - Data saved to `candidates.json` on success
 
----
-
-## What NOT to do
-- Do NOT use react-hook-form, formik, yup or any form library
-- Do NOT reload the page between steps
-- Do NOT use `alert()` for errors — inline messages only
-- Do NOT use a plain text input for skills — tag chips are required
 
 ---
 
