@@ -26,9 +26,16 @@ Respond ONLY as a valid JSON array, containing objects with these exact keys:
 ]
 Do not include markdown formatting or conversational text. Return only the raw JSON string array.`;
 
+    // Tie the Ollama fetch to the client connection lifecycle
+    const controller = new AbortController();
+    req.on('close', () => {
+        controller.abort();
+    });
+
     // 3. API Request using Local Ollama (using /api/generate)
     const response = await fetch(`http://127.0.0.1:11434/api/generate`, {
       method: 'POST',
+      signal: controller.signal,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -89,6 +96,9 @@ Do not include markdown formatting or conversational text. Return only the raw J
     }
 
   } catch (error) {
+    if (error.name === 'AbortError') {
+      return console.log('Ollama request aborted by client (likely React StrictMode double-fire)');
+    }
     if (error.code === 'ECONNREFUSED') {
       return res.status(500).json({ error: 'Connection to local Ollama refused. Is Ollama running on port 11434?' });
     }

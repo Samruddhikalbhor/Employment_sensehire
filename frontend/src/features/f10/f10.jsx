@@ -13,6 +13,7 @@ export default function F10({ gaps = MOCK_GAPS }) {
 
   useEffect(() => {
     let isMounted = true;
+    const controller = new AbortController();
 
     async function fetchRecommendations() {
       try {
@@ -21,6 +22,7 @@ export default function F10({ gaps = MOCK_GAPS }) {
         
         const response = await fetch('/api/recommendations', {
           method: 'POST',
+          signal: controller.signal,
           headers: {
             'Content-Type': 'application/json'
           },
@@ -43,6 +45,7 @@ export default function F10({ gaps = MOCK_GAPS }) {
 
         setRecommendations(data.suggestions || []);
       } catch (err) {
+        if (err.name === 'AbortError') return;
         if (isMounted) {
           setError(err.message);
         }
@@ -61,6 +64,7 @@ export default function F10({ gaps = MOCK_GAPS }) {
 
     return () => {
        isMounted = false;
+       controller.abort();
     };
   }, [gaps]);
 
