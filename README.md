@@ -135,9 +135,6 @@ Read the full spec for any feature by opening `contest-platform/index.html` or r
 
 Browse the feature cards at `contest-platform/index.html`. Click any card to read the full specification — what to build, expected output, what NOT to do, and exact files to change.
 
-### Step 2 — Claim the issue
-
-Go to [GitHub Issues](https://github.com/YOUR_ORG/sensehire/issues) and open the issue template for your chosen feature. Assign it to yourself. This prevents two people from building the same thing.
 
 ### Step 3 — Create your branch
 
@@ -394,11 +391,6 @@ Participants do not need to do anything — pull the latest main branch and the 
 
 ---
 
-## License
-
-MIT — see [LICENSE](./LICENSE) for details.
-
----
 
 <div align="center">
 
