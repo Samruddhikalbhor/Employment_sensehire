@@ -101,7 +101,7 @@ export default function Home() {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <a href="#features" style={{ color: '#64748b', fontSize: '13px', textDecoration: 'none', fontFamily: '"DM Sans", sans-serif' }}>Features</a>
-          <a href="https://github.com/YOUR_ORG/sensehire" target="_blank" rel="noreferrer"
+          <a href="https://github.com/commitverse2026/Employment_sensehire" target="_blank" rel="noreferrer"
             style={{
               color: '#f1f5f9', fontSize: '13px', textDecoration: 'none',
               background: '#1e293b', border: '1px solid #334155',
@@ -328,29 +328,7 @@ export default function Home() {
           </div>
         )}
       </section>
-
-      {/* ── Footer ── */}
-      <footer style={{
-        borderTop: '1px solid #1e293b',
-        padding: '28px 32px',
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        flexWrap: 'wrap', gap: '12px',
-        background: '#060912',
-      }}>
-        <div style={{ fontFamily: '"JetBrains Mono", monospace', fontSize: '12px', color: '#1e293b' }}>
-          SENSEHIRE © 2025 — OPEN SOURCE COMPETITION
-        </div>
-        <div style={{ display: 'flex', gap: '20px' }}>
-          <a href="https://github.com/YOUR_ORG/sensehire/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer"
-            style={{ color: '#334155', fontSize: '12px', textDecoration: 'none', fontFamily: '"JetBrains Mono", monospace' }}>
-            CONTRIBUTING.md
-          </a>
-          <a href="https://github.com/YOUR_ORG/sensehire/issues" target="_blank" rel="noreferrer"
-            style={{ color: '#334155', fontSize: '12px', textDecoration: 'none', fontFamily: '"JetBrains Mono", monospace' }}>
-            GitHub Issues
-          </a>
-        </div>
-      </footer>
+   
     </div>
   )
 }
