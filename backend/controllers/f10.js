@@ -43,7 +43,11 @@ Do not include markdown formatting or conversational text. Return only the raw J
         model: process.env.OLLAMA_MODEL || "llama3.2",
         system: "You are a precise workplace accessibility expert that only outputs JSON data.",
         prompt: prompt,
-        stream: false
+        stream: false,
+        options: {
+           temperature: 0.1, // Highly deterministic sampling speeds up generation
+           num_predict: 300  // Cap the maximal generation length so it doesn't ramble
+        }
       })
     });
 
