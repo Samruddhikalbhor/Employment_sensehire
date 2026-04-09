@@ -27,6 +27,12 @@ app.post("/api/onboarding", (req, res) => {
   });
 });
 
+// F02 ROUTE (disability profiler )
+const { getDisabilityTypes, saveDisability } = require("./controllers/f02");
+
+app.get("/api/disability-types", getDisabilityTypes);
+app.post("/api/disability", saveDisability);
+
 // ======================
 // F03 ROUTE (Ability Input)
 // ======================
