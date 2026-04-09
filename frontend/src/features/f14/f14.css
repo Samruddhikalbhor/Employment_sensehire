@@ -1,0 +1,148 @@
+.f14-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.f14-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.f14-header h1 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.f14-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.f14-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.f14-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.f14-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.f14-btn:active {
+  transform: translateY(0);
+}
+
+.f14-btn-primary {
+  background: #3498db;
+  color: white;
+}
+
+.f14-btn-primary:hover {
+  background: #2980b9;
+}
+
+.f14-btn-warning {
+  background: #f39c12;
+  color: white;
+}
+
+.f14-btn-warning:hover {
+  background: #e67e22;
+}
+
+.f14-btn-danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.f14-btn-danger:hover {
+  background: #c0392b;
+}
+
+.f14-info {
+  background: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.f14-info h3 {
+  color: #2c3e50;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.f14-info ol,
+.f14-info ul {
+  margin-left: 1.5rem;
+  color: #34495e;
+  line-height: 1.8;
+}
+
+.f14-demo {
+  background: #fff3cd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+  margin-top: 2rem;
+}
+
+.f14-demo h3 {
+  color: #856404;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.f14-demo p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.f14-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #f5c6cb;
+}
+
+.f14-error h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .f14-container {
+    padding: 1rem;
+  }
+
+  .f14-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .f14-header h1 {
+    font-size: 1.5rem;
+  }
+}
