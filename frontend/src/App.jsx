@@ -1,7 +1,7 @@
-import OnboardingForm from "./components/OnboardingForm";
+import DisabilityProfiler from "./components/DisabilityProfiler";
 
 function App() {
-  return <OnboardingForm />;
+  return <DisabilityProfiler />;
 }
 
 export default App;
